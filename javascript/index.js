@@ -14,15 +14,16 @@ const milUniElement = document.getElementById('milUni');
 const splitsElement = document.getElementById('splits');
 
 function printTime() {
-  // ... your code goes here
+  
 }
 
 function printMinutes() {
-  // ... your code goes here
+
 }
 
 function printSeconds() {
-  // ... your code goes here
+  
+  
 }
 
 // ==> BONUS
@@ -35,31 +36,47 @@ function printSplit() {
 }
 
 function clearSplits() {
-  // ... your code goes here
+  
 }
 
 function setStopBtn() {
-  // ... your code goes here
+  btnLeftElement.classList.toggle('start');
+  btnLeftElement.classList.toggle('stop');
+  btnLeftElement.innerHTML = 'STOP';
 }
 
 function setSplitBtn() {
-  // ... your code goes here
+  btnRightElement.classList.toggle('reset');
+  btnRightElement.classList.toggle('split');
+  btnRightElement.innerHTML = 'SPLIT';
 }
 
 function setStartBtn() {
-  // ... your code goes here
+  btnLeftElement.classList.toggle('stop');
+  btnLeftElement.classList.toggle('start');
+  btnLeftElement.innerHTML = 'START';
 }
 
 function setResetBtn() {
-  // ... your code goes here
+  btnRightElement.classList.toggle('split');
+  btnRightElement.classList.toggle('reset');
+  btnRightElement.innerHTML = 'RESET';
 }
 
 // Start/Stop Button
 btnLeftElement.addEventListener('click', () => {
-  // ... your code goes here
+  if (btnLeftElement.innerHTML === 'START') {
+    setStopBtn();
+  } else {
+    setStartBtn();
+  }
 });
 
 // Reset/Split Button
 btnRightElement.addEventListener('click', () => {
-  // ... your code goes here
+  if (btnRightElement.innerHTML === 'RESET') {
+    setSplitBtn();
+  } else {
+    setResetBtn();
+  }
 });
